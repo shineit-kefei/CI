@@ -8,23 +8,27 @@ cache:
 python:
   - "2.7"
 
-#addons:
-##  apt:
-## only add the two lines below if you need wkhtmltopdf for your tests
-##    sources:
-##      - pov-wkhtmltopdf
-##    Search your sources alias here:
-##      https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
-#    packages:
-#
-##     Search your packages here:
-##       https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
-##      - wkhtmltopdf  # only add if needed and check the before_install section below
-#
-## set up an X server to run wkhtmltopdf.
-##before_install:
-##  - "export DISPLAY=:99.0"
-##  - "sh -e /etc/init.d/xvfb start"
+addons:
+#  apt:
+# only add the two lines below if you need wkhtmltopdf for your tests
+#    sources:
+#      - pov-wkhtmltopdf
+#    Search your sources alias here:
+#      https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
+    packages:
+      - expect-dev  # provides unbuffer utility
+      - python-lxml  # because pip installation is slow
+      - python-simplejson
+      - python-serial
+      - python-yaml
+#     Search your packages here:
+#       https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
+#      - wkhtmltopdf  # only add if needed and check the before_install section below
+
+# set up an X server to run wkhtmltopdf.
+#before_install:
+#  - "export DISPLAY=:99.0"
+#  - "sh -e /etc/init.d/xvfb start"
 
 env:
   global:
@@ -63,17 +67,19 @@ virtualenv:
   system_site_packages: true
 
 install:
-  - apt-get install python-pip
-  - apt-get install expect-dev  # provides unbuffer utility
-  - apt-get install python-lxml  # because pip installation is slow
-  - apt-get install python-simplejson
-  - apt-get install python-serial
-  - apt-get install python-yaml
+  - apt-get update -qy
+  - apt-get -y install npm
+  - apt-get install -y python-dev python-pip
+#  - apt-get install -y expect-dev  # provides unbuffer utility
+  - apt-get install -y python-lxml  # because pip installation is slow
+  - apt-get install -y python-simplejson
+  - apt-get install -y python-serial
+  - apt-get install -y python-yaml
   - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - export TRAVIS_BUILD_DIR=$HOEM/kefei/CI
   - travis_install_nightly
-  - pip install coveralls  # Force install coveralls in all cases of MQT for self_test script.
+    - pip install coveralls  # Force install coveralls in all cases of MQT for self_test script.
   - git --git-dir=${TRAVIS_BUILD_DIR}/.git add --all  # All modules moved are modules changed to test PR changes
 
 script:
