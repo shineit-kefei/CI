@@ -27,8 +27,8 @@
       <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+            <state relative-caret-position="544">
+              <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="928" />
+    <option name="x" value="1006" />
     <option name="y" value="23" />
     <option name="width" value="992" />
     <option name="height" value="977" />
@@ -332,7 +332,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="928" y="23" width="992" height="977" extended-state="0" />
+    <frame x="1006" y="23" width="992" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.053684212" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -365,8 +365,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+        <state relative-caret-position="544">
+          <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
           <folding />
         </state>
       </provider>
